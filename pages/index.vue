@@ -1,23 +1,19 @@
 <script lang="ts" setup>
-const query = gql`
-  query getCharacters {
-    characters {
-      results {
-        id
-        name
-        image
-        status
-        species
-        location {
-          name
-        }
-      }
-    }
-  }
-`;
+import CharacterCard from '@/components/CharacterCard.vue';
+import GET_CHARACTERS from '@/graphql/queries/getCharacters.gql';
+import type { CharactersResult } from '~/types/Character';
 
-const { data } = await useAsyncQuery(query);
+const { data, pending, error } = await useAsyncQuery<CharactersResult>(
+  GET_CHARACTERS
+);
 </script>
+
 <template>
-  <div class="text-lg">{{ data }}</div>
+  <div
+    class=""
+    v-for="character in data?.characters.results"
+    :key="character.id"
+  >
+    <CharacterCard :character="character" />
+  </div>
 </template>
