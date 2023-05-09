@@ -14,3 +14,7 @@ export interface Character {
   species: string;
   location: Location;
 }
+
+export interface CharacterDetail {
+  id: string;
+}

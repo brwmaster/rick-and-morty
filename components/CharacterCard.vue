@@ -5,17 +5,39 @@ interface Props {
   character: Character;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+const { id, name, image, status, species, location } = toRefs(props.character);
+
+const isDead = computed(() => {
+  return props.character.status === 'Dead'
+    ? { modifiers: { grayscale: true } }
+    : {};
+});
 </script>
 
 <template>
-  <div>
-    <NuxtImg :src="character.image" :alt="`Image for {{ name }}`" />
+  <div
+    class="flex items-center gap-4 w-[550px] bg-gray-100 rounded-xl shadow-xl"
+  >
+    <NuxtImg
+      :src="image"
+      :alt="`Image for ${name}`"
+      width="200"
+      height="200"
+      v-bind="isDead"
+      class="rounded-tl-xl rounded-bl-xl"
+    />
     <div class="">
-      <h3>{{ character.name }}</h3>
-      <p>{{ character.status }}</p>
-      <p>{{ character.species }}</p>
-      <p>{{ character.location.name }}</p>
+      <h3 class="text-2xl mb-2">{{ name }}</h3>
+      <p>
+        Status: <span>{{ status }}</span>
+      </p>
+      <p>
+        Species: <span>{{ species }}</span>
+      </p>
+      <p>
+        Location: <span>{{ location.name }}</span>
+      </p>
     </div>
   </div>
 </template>
