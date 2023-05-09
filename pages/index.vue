@@ -19,5 +19,5 @@ const query = gql`
 const { data } = await useAsyncQuery(query);
 </script>
 <template>
-  <div class="">{{ data }}</div>
+  <div class="text-lg">{{ data }}</div>
 </template>
