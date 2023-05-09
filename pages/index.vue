@@ -9,11 +9,11 @@ const { data, pending, error } = await useAsyncQuery<CharactersResult>(
 </script>
 
 <template>
-  <div
-    class=""
-    v-for="character in data?.characters.results"
-    :key="character.id"
-  >
-    <CharacterCard :character="character" />
+  <div v-if="!pending" class="flex justify-center flex-wrap gap-4 p-8">
+    <CharacterCard
+      v-for="character in data?.characters.results"
+      :key="character.id"
+      :character="character"
+    />
   </div>
 </template>
