@@ -1,17 +1,12 @@
-# Nuxt 3 Minimal Starter
+# Rick and Morty app
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Funcy app to test out how to work with graphql in Nuxt3
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# yarn
-yarn install
-
-# npm
-npm install
 
 # pnpm
 pnpm install
@@ -22,7 +17,7 @@ pnpm install
 Start the development server on `http://localhost:3000`
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ## Production
@@ -30,13 +25,19 @@ npm run dev
 Build the application for production:
 
 ```bash
-npm run build
+pnpm build
 ```
 
 Locally preview production build:
 
 ```bash
-npm run preview
+pnpm preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Stack
+
+- Nuxt3
+- Nuxt image
+- Nuxt apollo
+- TailwindCSS
