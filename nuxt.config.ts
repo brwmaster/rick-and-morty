@@ -8,8 +8,4 @@ export default defineNuxtConfig({
       }
     }
   }
-
-  // image: {
-  //   domains: ['https://rickandmortyapi.com']
-  // }
 });
