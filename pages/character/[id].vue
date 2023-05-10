@@ -1,16 +1,22 @@
 <script setup lang="ts">
 import GET_CHARACTER from '@/graphql/queries/getCharacter.gql';
-import type { CharactersResult } from '~/types/Character';
+import type { CharacterResult } from '~/types/Character';
 
 const route = useRoute();
 
-const { data, pending, error } = await useAsyncQuery<CharactersResult>(
+const { data, pending, error } = await useAsyncQuery<CharacterResult>(
   GET_CHARACTER,
-  { id: route.params.id }
+  {
+    id: route.params.id
+  }
 );
 </script>
 
 <template>
-  <div>{{ route.params.id }}</div>
-  <div>{{ data }}</div>
+  <div
+    v-if="!pending && data"
+    class="flex justify-center items-center h-screen"
+  >
+    <CharacterCard :character="data.character" />
+  </div>
 </template>

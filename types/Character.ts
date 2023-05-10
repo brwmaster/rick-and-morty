@@ -6,6 +6,10 @@ export type CharactersResult = {
   };
 };
 
+export type CharacterResult = {
+  character: Character;
+};
+
 export interface Character {
   id: string;
   name: string;
