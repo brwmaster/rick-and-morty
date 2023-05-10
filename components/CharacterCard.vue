@@ -8,6 +8,10 @@ interface Props {
 
 const props = defineProps<Props>();
 const { id, name, image, status, species, location } = toRefs(props.character);
+
+const isDead = computed(() => {
+  return props.character.status === 'Dead' ? 'grayscale' : undefined;
+});
 </script>
 
 <template>
@@ -21,6 +25,7 @@ const { id, name, image, status, species, location } = toRefs(props.character);
         :alt="`Image for ${name}`"
         width="200"
         height="200"
+        :class="isDead"
         class="rounded-tl-xl rounded-bl-xl"
       />
       <div>
