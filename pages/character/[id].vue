@@ -17,6 +17,6 @@ const { data, pending, error } = await useAsyncQuery<CharacterResult>(
     v-if="!pending && data"
     class="flex justify-center items-center h-screen"
   >
-    <CharacterCard :character="data.character" />
+    <CharacterCard :character="data.character" to="/" />
   </div>
 </template>

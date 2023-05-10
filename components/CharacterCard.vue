@@ -3,6 +3,7 @@ import type { Character } from '@/types/Character';
 
 interface Props {
   character: Character;
+  to: string;
 }
 
 const props = defineProps<Props>();
@@ -18,8 +19,8 @@ const isDead = computed(() => {
 <template>
   <div>
     <NuxtLink
-      :to="`/character/${id}`"
-      class="flex items-center gap-4 w-[550px] bg-gray-100 rounded-xl shadow-xl"
+      :to="props.to"
+      class="flex items-center gap-4 w-[375px] md:w-[550px] bg-gray-100 rounded-xl shadow-xl"
     >
       <NuxtImg
         :src="image"
@@ -29,15 +30,15 @@ const isDead = computed(() => {
         v-bind="isDead"
         class="rounded-tl-xl rounded-bl-xl"
       />
-      <div class="">
-        <h3 class="text-2xl mb-2">{{ name }}</h3>
-        <p>
+      <div>
+        <h3 class="text-xl md:text-2xl mb-2">{{ name }}</h3>
+        <p class="text-sm md:text-base">
           Status: <span>{{ status }}</span>
         </p>
-        <p>
+        <p class="text-sm md:text-base">
           Species: <span>{{ species }}</span>
         </p>
-        <p>
+        <p class="text-sm md:text-base">
           Location: <span>{{ location.name }}</span>
         </p>
       </div>
