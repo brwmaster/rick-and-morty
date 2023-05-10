@@ -10,7 +10,6 @@ export default defineNuxtConfig({
   },
 
   image: {
-    domains: ['https://rickandmortyapi.com'],
-    provider: 'netlify'
+    domains: ['https://rickandmortyapi.com']
   }
 });
