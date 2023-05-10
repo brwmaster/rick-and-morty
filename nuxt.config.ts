@@ -7,9 +7,9 @@ export default defineNuxtConfig({
         httpEndpoint: 'https://rickandmortyapi.com/graphql'
       }
     }
-  },
-
-  image: {
-    domains: ['https://rickandmortyapi.com']
   }
+
+  // image: {
+  //   domains: ['https://rickandmortyapi.com']
+  // }
 });
