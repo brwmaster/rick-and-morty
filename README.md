@@ -2,6 +2,8 @@
 
 Funcy app to test out how to work with graphql in Nuxt3
 
+App can be found [here](https://rick-and-morty.edwinboon.dev)
+
 ## Setup
 
 Make sure to install the dependencies:
@@ -33,7 +35,6 @@ Locally preview production build:
 ```bash
 pnpm preview
 ```
-
 
 ## Stack
 
