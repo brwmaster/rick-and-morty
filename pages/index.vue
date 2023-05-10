@@ -14,6 +14,7 @@ const { data, pending, error } = await useAsyncQuery<CharactersResult>(
       v-for="character in data?.characters.results"
       :key="character.id"
       :character="character"
+      :to="`character/${character.id}`"
     />
   </div>
 </template>
